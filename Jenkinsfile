@@ -18,7 +18,7 @@ pipeline {
         SONARQUBE_ENV = 'SonarQube'
 
         // Nom de ton projet SonarQube
-        SONAR_PROJECT_KEY = 'mon-projet'
+        SONAR_PROJECT_KEY = 'jenkins-multi-braches'
     }
 
     stages {
