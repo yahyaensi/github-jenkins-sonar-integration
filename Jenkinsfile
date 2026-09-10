@@ -39,12 +39,16 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv("${SONARQUBE_ENV}") {
-
-                    sh '''
-                        ./mvnw sonar:sonar \
-                          -Dsonar.projectKey=${SONAR_PROJECT_KEY}
-                    '''
+                // Le bloc script permet d'utiliser du code Groovy (comme def)
+                script {
+                    def scannerHome = tool 'SonarScanner'
+                    
+                    withSonarQubeEnv("${SONARQUBE_ENV}") {
+                        sh "${scannerHome}/bin/sonar-scanner \
+                          -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                          -Dsonar.sources=src/main/java \
+                          -Dsonar.java.binaries=target/classes"
+                    }
                 }
             }
         }
