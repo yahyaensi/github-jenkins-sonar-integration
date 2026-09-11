@@ -6,6 +6,8 @@ public class User {
 
     private String lastName;
 
+    private int age;
+
     public void printName() {
         System.out.println(firstName + " " + lastName);
     }
