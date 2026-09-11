@@ -2,10 +2,8 @@ package com.example;
 
 public class User {
 
-    private String name;
+    private String firstName;
 
-    public void methodWithSonarErrors() {
-
-    }
+    private String lastName;
 
 }
