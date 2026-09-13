@@ -15,10 +15,10 @@ pipeline {
 
     environment {
         // Nom de l'installation SonarQube configurée dans Jenkins
-        SONARQUBE_ENV = 'SonarQube'
+        SONARQUBE_ENV = 'SonarQube' 
 
         // Nom de ton projet SonarQube
-        SONAR_PROJECT_KEY = 'jenkins-multi-braches'
+        SONAR_PROJECT_KEY = 'github-jenkins-sonar-integration'
     }
 
     stages {
